@@ -1,0 +1,46 @@
+ Python Automation Testing:-
+
+ -------------------------
+Thinkpad and HP
+
+ IT ----------------- 
+
+ Service Base (Infosys,Wipro,Capgemini,Cognizant,Mindtree,Mindfire)
+ Product Base (Dunzo,Microsoft,IBM,Harman,Samsung,Google,Filpkart)
+
+
+ Application --- product
+
+ Web Application
+ Desktop Application
+ Mobile Application
+
+dev:-
+
+Frontend (HTML,CSS,JS,XML,YML,Jquery)
+
+backend(functionality:- java,python,c,c++,.net, golang,R) backend connected with database
+
+database(Orcale,Mysql,Sqlite3,Pgsql)--data
+
+
+Application with testing is nothing
+
+A  ---> 
+
+A--> 
+
+User Name -- >  Manual Testing
+
+Password
+
+
+
+submit
+
+
+Program ---  Programing test case/ test scripts
+
+Python
+
+Software Test Automation Eng.

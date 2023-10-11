@@ -1,0 +1,30 @@
+T(n)=2T(n/2)+constant
+
+level 0 - 1 node -- 2^0
+level 1 - 2 nodes --- 2^1
+level 2 - 4 nodes --- 2^2
+level 3 - 8 nodes --- 2^3
+
+level i - 2^i nodes will be there
+
+time taken for level 1 - c
+time taken for level 2 -- 2c
+
+if n=4, h=2
+n=8, h=3
+n=16,h=4
+n= 2 power h
+h = logn base 2
+
+The height of tree is logn base 2
+
+total time taken = c+2c+4c+8c+...
+                 = c(1+2+4+8+..+clognbase2)
+                =c(2 power 0+ 2 power 1 +...+n)
+               = c(approximately n)
+
+   O(n)
+
+
+
+

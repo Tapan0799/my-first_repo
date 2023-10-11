@@ -1,0 +1,19 @@
+Database connectivity using Python
+
+MySQL database (latest version is 8)
+MySQL 5.x version also can be used
+
+create database command in mysql
+create database pythonappdb
+
+switch to the database
+use pythonappdb
+
+python program to connect to database
+
+MySQLDB module can be setup from anaconda package
+
+mysqldb can also be installed from the below link
+
+https://pypi.org/project/mysqlclient/
+

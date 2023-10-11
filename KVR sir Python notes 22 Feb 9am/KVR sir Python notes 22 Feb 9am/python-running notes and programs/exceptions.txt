@@ -1,0 +1,46 @@
+Exceptions in Python
+
+In python there are 2 types of errors:
+syntax errors
+Runtime exceptions
+
+syntax error
+
+a=5
+if a %2 == 0
+   print("even")
+
+#syntax error
+
+Runtime exceptions are also called Runtime Errors
+during the execution of the program if something goes wrong because of some programming logic
+or some data issues, then the program gives some errors
+These are called Runtime exceptions or Runtime Errors
+
+a = 2
+b = 0
+c = a/b
+
+There are different types of errors or exceptions
+ZeroDivisionError
+TypeError
+FileNotFoundError
+
+We need to handle the exceptions so that the other part of any important code gets executed properly
+
+handling the execption
+using try-except (block)
+
+try - the block where exception is generated, in try block if exception comes it will go to except block
+otherwise control will not go to except block
+except - the block where exception is handled
+finally - this is the last block that gets executed always if exception comes or does not come
+
+use of finally -- generally if the python program is connecting to databases or file systems
+finally will be used to close the database connections or file resource connections
+
+
+
+
+
+

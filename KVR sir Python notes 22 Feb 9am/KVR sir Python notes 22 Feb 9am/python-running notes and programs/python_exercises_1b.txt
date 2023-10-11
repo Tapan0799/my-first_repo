@@ -1,0 +1,510 @@
+Python can be used for developing desktop based applictaions,
+web applications, data analytics and data science,develop games,
+machine learning, for IOT
+
+Google uses python
+AWS supports python
+Microsoft also supports python
+youtube also supports python
+
+Python is very simple and easy to learn language when compared to
+other languages like Java, C# etc
+
+Python is platform independent -- it uses PVM and generates
+machine understandable code
+
+Dynamically Typed:
+In python, we do'nt need to declare type for variables.
+Example in java
+int x=2
+
+x=2
+The value type will be assigned to the variable automatically
+
+Python : supports procedure oriented like C and object oriented
+like Java
+
+Python performance wise bit slow when compared to compiled langauges like c and C++
+
+CPython - it can be used to work with C language applications
+Jython - it is for java applications
+IronPython - it is C# .net 
+PyPy - this is orginal flavour of python. The performance is faster here because it
+uses JIT
+AnaconodaPython - used for data engineering, data analytics, data science applications
+the latest version of python is 3.x
+
+what are identifiers in python
+Python identifiers are names defined
+a=10
+
+rules to defined these identifiers
+we cannot use special characters like $ in the identifiers
+identifier should not start with digit also
+Python is case sensitive langauge
+
+a=2
+A=2
+
+Reserved words in python: This reprsent functionality or some task
+True, False, if, elif, else, and, or, not, is, while, for, break, continue,
+yield, try, except, finally, assert, import, from, lambda, def, pass, class, with
+
+Data types in python- the type of data present in the variable
+
+Int, Float, Bool, Str, Bytes, List, Tuple, Set, Dict, None
+
+x=2
+type(x)
+type - gives to check the type of variable
+
+print() - print the value
+id()- get address of the object
+
+in python any value is stored as objects, the objects are stored in the heap memory
+
+Python also supports complex datatype
+
+x+yj --- where x and y are integers or floats
+
+a=3+2j
+
+type casting - convert one type value to another value type
+
+int() -- this will convert to int type
+
+int(200.56) -- 200
+
+int(100+2j) -- complex cannot be converted to int type
+
+int(False) - 0
+int(True) - 1
+
+int("10") - 10
+
+float() - thios converts to float type
+
+float("10.3")
+10.3
+
+float(False) - 0.0
+
+complex() - this convertes to complex type
+
+complex(30.2) = 30.2+0j
+
+complex("30") - error malformed string
+
+bool() - convert to bool type
+
+Str() - converts to string type
+
+bytes data type - this represents group of byte numbers
+bytearray - similar to bye but the elemnts can be modified
+List data type - group of values that allows store as a collection, mutable(once list 
+is created, we can add or update or modify the list elements). Duplicates are allowed
+Tuple data type - similar to list but immutable(once tuple is create, we cannot update
+pr modify or add the elements in the typle). Duplicates are allowed
+Range data type- represents sequence of numbers
+Set data type - duplicates are not allowed, Mutable
+Frozenset data type - it is similar to set but immutable
+dict data type - this will store data as key-value pairs
+
+
+
+values = range(20)
+for i in values: print(i)
+
+control statement - for loop, while loop
+
+Control statements :
+The statements that control the exeuction of the program like Conditional statements,
+Iterative statements, Transfer statements
+
+write a python program to display first 10 even numbers
+
+for value in range(21):
+   if(value%2==0):
+      print(value)
+
+time complexities of few programs
+how much running time the program is executed
+
+1. for i in range(0,n):
+   print(i)
+O(n)
+
+2. for i in range(0,n):# n times
+   for j in range(0,n): # n times
+        print("hello")
+
+O(n^2)
+
+3. i=1
+#the loop get exit when i=n
+while i<=n:
+     i=i*2
+     print(i)
+
+after 1st iteration, i=2 = 2^1
+after second iteration, i=4 = 2^2
+after third iteration, i=8 = 2^3
+after 4th iteration, i=16 = 2^4
+after 5th iteration, i=32= 2^5
+after kth iteration, i=2^k
+let us assume the loop runs for k iterations
+
+after k iterations, i=n
+
+2^k = n
+apply log base 2 function on both sides
+log(2^k) = log(n)
+k=log(n) base 2
+ k = log(n)
+
+log(n) times
+
+4. i=n
+while i>=1:
+    i=i/2
+    print(i)
+
+log(n) times
+
+
+
+5. def method1(n):
+  i=j=1
+  while j<n:
+    i=i+1
+    j=j+i
+    print("hello")
+
+this will run O(sqrt(n)) times
+
+before first iteration i=1, j=1
+after 1st iteration, i=2, j=3.. sum of 1,2
+after 2nd iteration, i=3, j=6...sum of 1,2,3(first 3 natural numbers)
+after 3rd iteration, i=4, j=10...sum of 1,2,3,4(first 4 natural numbers)
+after 4th iteration, i=5, j=15...sum of 1,2,3,4,5
+after kth iteration, i=k+1, j=sum of 1,2,3,4,5...k+1
+1+2+3+4+...+k+k+1
+=k(k+1)/2 +(k+1)
+let us assume the loop runs for k iterations
+
+j=n to stop the loop
+k(k+1)/2 +(k+1) = n
+n=k(k+1)/2 = k^2
+
+n=k^2
+
+k=sqrt(n)
+
+6. def function1(n):
+      i=1
+      count=0
+      while i*i<n:
+         count=count+1
+         i=i+1
+         print(count)
+
+def function1(n):
+      i=1
+      count=0
+      j=1
+      while j<n:
+         count=count+1
+         i=i+1
+         j=i*i
+         print(count)
+
+this loop will end when i^2>n
+
+  i^2=n that time the loop end
+
+ i=sqrt(n)
+
+this will run for sqrt(n) times
+
+  after 1st iteration, i=2, j=4
+   after 2nd iteration, i=3,j=9
+    after 3rd iteration, i=4,j=16
+ 
+    assume loop runs for k iterations
+ after kth iteration, i = k+1, j=(k+1)(k+1)=k^2
+after kth iteration, j=n approximatley
+
+k^2=n
+k=sqrt(n)
+jp morgan interview question
+7. def method1(n):
+     count=0
+     for i in range(n/2,n): # n/2 times
+         j=1
+         while j+n/2<=n: # n/2 times
+           k=1
+           while k<=n:  # log(n) times
+              count=count+1
+              k=k*2
+         j=j+1
+     print(count)
+
+ n/2 * n/2 * logn = n^2 logn
+
+O(n^2 logn)
+
+8. def method1(n):
+     count=0
+     for i in range(n/2,n): # n/2 times
+         j=1
+         while j+n/2<=n: # logn times
+           k=1
+           while k<=n:  # log(n) times
+              count=count+1
+              k=k*2
+         j=j*2
+     print(count)
+
+n/2 * logn * logn
+n/2 (logn)^2 = O(n (logn)^2)
+
+9. def method1(n):
+     for i in range(n/2,n): #n/2 times
+         j=1
+         while j+n/2 <=n: # 1 time
+              break
+              j=j*2
+     print("hello")
+
+  n/2 * 1 = O(n) times
+
+10. def method1(n):
+    counter=1
+     for i in range(n/2,n): #n/2 times
+         j=1
+         while j+counter+n/2 <=n: # n/2 times
+              counter = counter+1
+              continue
+              j=j*2
+     print("hello")
+
+  n/2 * n/2= O(n^2) times
+
+
+recursions and patterns
+
+******
+ *****
+   ***
+
+1. problem solving - patterns, recursions, time complexities, range, slice operator
+problems, thread related problems, files related, loops
+2. technical oral interview - covering python oops concepts, and other
+concepts like strings, modules, decorators, multi dimensional arrays using numpy
+, some questions on pandas
+
+3. HR round
+
+
+11. Pattern problems
+     
+   a) Given n rows , print the following pattern
+for n=4
+   *
+   * *
+   * * *
+   * * * *
+
+   n = 4
+   for i in range(n):
+      for j in range(i+1):
+          print('*',end='')
+      print()
+
+   n=4
+   for i in range(n):
+       print('* '*(i+1))
+         
+  b) * * * *
+     * * *
+     * *
+     *
+    n=4
+    for i in range(n):
+       print('* '*(n-i))
+
+  c)  
+    
+     *
+    *  *
+   *  *  *
+  *  *  *  *
+
+
+    *
+   *  *
+  * *  *
+      n=3
+      for i in range(n):
+        print((' '*(n-i-1))+('* ')*(i+1))
+
+
+    *
+   *  *
+  *  *  *
+ *  *  *  *
+
+  n=4
+  for i in range(n):
+     print((' '*(n-i-1))+('* ')*(i+1))
+
+   d)
+     
+       1
+       2 3
+       4 5 6
+       7 8 9 10
+
+
+     * * * * *
+      * * * *
+       * * *
+        * *
+         *
+   try to get this in one loop
+   
+     n=5
+     for i in range(n):#i=0,1,2,3,4
+       print(' '*i+'* '*(n-i))
+
+
+12) find the running time of this in terms of n
+      def function(n):
+         for i in range(0,n/3): // n/3 times
+             j=1
+             while j<=n: // n/4 times
+                j=j+4
+                print("hello")
+
+   n/3 * n/4 = O(n^2)
+
+     def function(n):
+         for i in range(0,n/3): // n/3 times
+             j=1
+             while j<=n: // 
+                j=j*i
+                print("hello")
+
+
+    j=1
+    while j<=8
+       j=j+4
+  after 1st iteration, j=1
+    2nd iteration, j=1
+
+   it will go only for 2 iterations
+
+
+  Strings in python
+ what is string -
+string is group or sequence of characters. String in python is encloses in ' ' or ""
+
+str='python'
+str="python"
+
+In java, strings are enclosed in ""
+In java there is character data type. That is enclosed ' '
+
+In python there is no character data type
+
+These are called literals
+
+Multi-line string literals:
+multi line string literals can be put using triple quotes
+
+str='''today
+    is
+    friday'''
+
+access characters of string
+we can use slice operator
+we can also use index
+
+index:
+index supports +ve and negative
+str="program"
+str[0] #p
+str[-3] #r
+
+slice operator:
+access characters between start and end index with some step values
+
+slice - substring
+
+str="program"
+
+str[startindex:endindex:step]
+startindex- the start index from where we need to consider
+end index - we need to terminate at the value (endindex-1)
+step- incremented value
+step can be +ve or -ve value
+if step is +ve value, end index will be till (endindex-1)
+if step is -ve value, end index will be till (endindex+1)
+
+by default startindex- 0
+by default endindex - till the last character of the string
+by default step, the value is 1
+
+str="this is python program class"
+str[1:10:1] #his is py
+str[2:7] #is is
+str[-4:1:-1]
+# lc margorp nohtyp si si
+str[0:80000:1]
+#when end index is beyond the string limit, it will print the full string
+this is python program class
+str[::1]- this is python program class
+str[::-1] - ssalc margorp nohtyp si siht
+#home work
+str[-4:1:2]
+str[-4:1:-2]
+
+
+Immutability in strings
+in python any thing is considered as object
+Imuutable means the once the object is created, the object cannot be changed
+strings are immutable
+we can modify the string using replace method
+
+str="hello"
+str1 = str.replace("h","a")
+why string is immutable
+
+1. Security - string data is passed in the network so that no one can hack
+the original string object
+2. Concurrency (multi threading) -- parallel processing, big data(pyspark)
+every thread that modifies a string will get their own object or copy of the modified
+string
+3. Functional programming - immuiablity plays main role. Because functional programming
+supports concurrency
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+

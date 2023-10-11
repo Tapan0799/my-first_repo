@@ -1,0 +1,695 @@
+oops concepts
+1. Enacpsulation - Data hiding and binding with methods so that methods are exposed outside and protect the data
+2. Abstraction --- The complexity of the implementation is hidden and exposed through the methods
+3. Inheritance -- Taking the properties from the parent class and extending parent class methods with new features
+that are reusable
+4. Polymorphism - The same method in mutliple forms doing different tasks
+
+
+polymorphism:
+poly - many
+morph - forms
+
+many forms of methods
+
+
+add(x,y) - sum of 2 numbers
+add(x,y,z) - sum of 3 numbers
+
+   sendemail(toaddress,fromaddress,subject) -- send mail to to address with subject
+   sendemail(toaddress,fromaddress,subject, attachment) --- send mail with attachment
+
+any class can be defined using class keyword
+
+class Student:
+
+There are 3 types of varibales we can use
+
+Instance variables(object specific)
+static variables(class specific)
+Local variables(Method level)
+
+the variables will store the data related to classes and objects
+
+in a class to achieve encapsulation, we should have methods also
+methods will protect the data
+
+Instance methods
+class methods
+static methods
+
+in a class there will be constructor --- constructor is used to create and intialize the object for a class
+a constructor in python is denoted by def __init__. The first argument to constructor is self
+
+self is the current object
+
+class Student:
+    
+   def __init__(self,name,age,id):
+      self.name = name
+      self.age = age
+      self.id = id
+
+  def getStudentData(self):
+     print("student id is ",self.id)
+     print("student age is ",self.age)
+     print("student name is ",self.name)
+
+student = Student("ramesh",20,101)  # way of creating an object, here the left side student is called
+                                    # reference variablke
+student1 = Student("rajesh",21,102)
+student.getStudentData()
+student1.getStudentData()
+
+by using self, we can access instance variables and instance methods
+instance variables are the variables that  belong to the object
+each object will have its own instance variables
+ 
+instance methods are the methods that can be accessed by the object of the class
+
+Instance variables:
+The variable values specific to the object and each object will have a seperate copy of instance
+variables
+
+Instance variables can be declared
+inside a constructor by using self variable
+inside instance method by using self variable
+outside of a class by using object reference variable
+
+class Student:
+   def __init__(self,studentid,studentname):
+      self.studentid = studentid
+      self.studentname = studentname
+
+student = Student(101,'ravi')
+
+class Student:
+    def __init__(self,studentid,studentname):
+      self.studentid = studentid
+      self.studentname = studentname
+
+   def setAge(self, age):
+      self.age = age
+
+student = Student(101,'ravi') # this is calling the constructor of the class and creating an object
+student.setAge(12) # this is calling the instance method of the class
+
+class Student:
+    def __init__(self,studentid,studentname):
+      self.studentid = studentid
+      self.studentname = studentname
+
+    def setAge(self, age):
+      self.age = age
+    def displayPropertiesa(self):
+      print("name ", self.studentname)
+      print("id ", self.studentid)
+      print("age ", self.age)
+      print("gender ",self.gender)
+
+student = Student(101,'ravi')
+student.setAge(12)
+student.gender = 'male'
+
+student1 = Student(102,'rajesh')
+student1.setAge(11)
+student1.gender = 'male'
+
+print(student.__dict__)
+print(student1.__dict__)
+
+class is a blue print
+and object is a physical entity
+
+student class
+stduent id
+student name
+student age
+school name
+
+static variables:
+If the value of a variable is not varied from object to object, all the objects share the common property value
+then those variables are called static variables
+there will be one copy of static variable(class variables) for all objects of the class
+
+we can access static variables either by class name or by object reference. Recommended way is to use class name
+
+class Student:
+   def __init__(self,studentid,studentname):
+      self.studentid = studentid
+      self.studentname = studentname
+
+    def setAge(self, age):
+      self.age = age
+    def displayPropertiesa(self):
+      print("name ", self.studentname)
+      print("id ", self.studentid)
+      print("age ", self.age)
+      print("gender ",self.gender)
+
+student = Student(101,'ravi')
+student.setAge(12)
+student.gender = 'male'
+Student.schoolName = 'abc school'
+
+student1 = Student(102,'rajesh')
+student1.setAge(11)
+student1.gender = 'male'
+
+
+static variable can be declared as follow
+a static variable can be declared within the class directly from outside any method
+
+a class variable can be declared in constructor using class name
+
+a class variable can be declared inside instance method using class name
+
+inside classmethod by using either class name or cls variable
+
+inside static method by using classname
+
+how to access static variables
+inside instance method by using self or class name
+inside constructor by using self or class name
+inside class method by using cls variable or classname
+inside static method by using class name
+outside class by using object reference or class name
+
+suppose if we change the static variable value by using either self or object reference, the static variable
+value will not change and it will create a new instance variable
+
+
+Local Variables:
+Local variables will be declared inside a method, once the method execution gets completed
+the local variables can be destroyed
+Local variables cannot be accessed from outside of a method
+
+Types of methods
+Instance methods
+Class Methods
+Static methods
+
+Instance methods: The methods which are using instance variables are called instance methods
+inside instance methods we can access class variables. Local variables also can be used here
+
+constructors also can access static variables
+
+In instance methods, the first parameter to be passed is self
+
+def method1(self) 
+def method1(self,x,y)
+
+by using self variable, we can access the instance variables inside the instance method
+by using the object reference, we can call the instance method
+
+class methods : the methods which are using only class variables(static variables) then these methods
+are called class methods. Local variables also can be used here
+in class methods we cannot use instance variables
+The class methods should be declared by @classmethod decorator
+for class method, we should provide cls variable in the method parameter
+we can call class method by using classname or object reference
+
+in python, class variables and static variables are same
+but class methods and static methods are not same
+
+Static methods: This method does not use either instance variables or class variables
+They just use only local variables
+A static method should be declared using @staticmethod decorator
+we can access static methods using classname or object reference
+
+in the static methods we will not pass any self or cls variable
+The purpose of static methods is to write some utility methods
+
+calculate today date  -- utility method
+adding 2 numbers -- utility method
+calculating interest -- utility methods
+
+utility methods are used to have at one place the common logic defined
+
+
+Inheritance
+composition
+aggregation
+
+Inheritance:(is- a relationship)
+
+between the classes, ingheritance determine "is-a" relationship
+inheritance determines parent, child relationship
+
+fruit is a class
+orange is a class inherited or derived from fruit
+
+orange "is-a" fruit(english statement)
+
+shape is a class
+square is a class inherited or derived from fruit
+
+square "is-a" shape
+
+vehicle is a class
+car is a class inherited or derived from vehicle
+
+car "is-a" vehicle
+
+Generic statment of inheritance
+child class "is-a" parent class type
+
+what is the use of inheritance:
+inheritace can be used for reusability
+
+In Inheritance, the methods that are defined in parent class will be automatically be available
+in the child classes
+
+parent class P has methods m1, m2, m3
+child class C will contain automatically methods m1, m2, m3.
+It is your child class wish if it can add some logic to methods m1, m2, m3 or create new methods
+m4,,m5...
+
+
+class A:
+    x = 25
+    def __init__(self):
+        self.y = 30
+    def method1(self):
+        print("in parent class instance method1")
+ 
+
+    @classmethod
+    def method2(cls):
+           print("in parent class class method")
+
+
+    @staticmethod
+    def method3():
+           print("in parent class static method")
+
+class B(A): # B is extended or derived or inherited from A
+     pass   # just fo nothing
+
+b = B() # B object
+print(b.x)
+print(b.y)
+b.method1()
+b.method2()
+b.method3()
+
+whenever a child class uses super() that means it is parent class object
+
+Important points to be considered when we use super()
+
+1. from child class, we cannot access parent class instance variables by using super(), 
+we should use self only
+
+but we can access parent class static or class varianle by using super()
+
+2. from child class instance method and constructor, we can use super() and access instance method
+, class method and static method of parent class
+
+3. from child class class method we cannot access parent class instance methods and  
+constructors by using super() but we can access static and class methods using super()
+
+but how to call from class method of child class, the parent class instance methods and  
+constructors
+
+
+Composition and aggregation "has-a" relationship
+Inheritance "is-a" relation parent class --> child class->
+
+In has-a relationship there is no parent, child class relationship
+If a class is having a composition or aggregation  relationship with other class
+then that class object or properties are contained in this class
+
+composition is strong relationship -- if one entity gets deleted, the associated entity gets deleted
+aggregation is weak relationship - if one entity gets deleted, the associated entity will not get deleted
+
+organizaton has department
+
+if organization is removed, then department also will be removed --- strong relationship(composition)
+
+department has employees
+
+if department is removed or closed, employee will not be removed, employee can be associated with
+other organization or department
+--- weak relationship(aggregation)
+
+class Employee:
+    def __init__(self,department,name):
+       self.deptName = department.deptName
+       self.name = name
+
+    def getEmployeeDetails(self):
+        print("employee department ", self.deptName)
+        print("employee name", self.name)
+
+
+class Department:
+    def __init__(self,deptname):
+       self.deptName = deptName
+   
+department = Department("software engineering department")
+employee = Employee(department,"Ravi kumar")
+employee.getEmployeeDetails()
+
+
+Inheritance:
+differnt types of inheritance
+
+single inheritance --- there will be only one child class derived from parent
+
+class Parent:
+   def method1(self):
+     print("parent method")
+
+class Child(Parent):
+    def method2(self):
+       print("child method")
+
+Hybrid inheritance:
+class A:
+   method1(self):
+      print("in A")
+class B:
+   method2(self):
+         print("in B")
+class C(A,B):
+    method3(self):
+         print("in C")
+class D(C):
+     method4(self):
+        print("in d")
+class E(D):
+     method5(self):
+       print("in E")
+class F(E):
+    method6(self):
+       print("in F")
+class G(E):
+     method7(self):
+       print("in G")
+
+Multiple inheritance
+
+class A:
+   method1(self):
+      print("in A method1")
+class B:
+   method1(self):
+      print("in B method1")
+   method2(self):
+         print("in B method2")
+class C(A,B):
+    method3(self):
+         print("in C")
+
+c = C()
+c.method1() # ?  whether A's class method1 or B's class method1?
+c.method2() # this will access B's method2
+
+Method resolutin order (MRO):
+whenever a child is extended from 2 parents(1 left parent and another right parent), 
+1. First the method will be checked in the child class
+2. If the method is not available in child class, then it will go to the parent classes
+  the left parent will get more priority than right parent
+3. In case if the parents also does not contain the method, then search will happen in parents of parents
+
+MRO(X) = X + Merge(MRO(P1), MRO(P2),...parent list)
+P1 is left parent of X
+P2 is right parent of X
+
+Merge:
+1. Take head of the first list
+2. If head is not in the tail part of any list, add the head to the result and remove it from the merge lists
+3. If the head is present in the tail part of any other list, then consider head element of the next list
+and continue the same process
+
+MRO(A) =  A, Object
+whenever we call any method from object A, then first the method will be searched in class A and then its
+parent class
+
+MRO(B) = B, Object
+whenever we call any method from object B, then first the method will be searched in class B and then its
+parent class
+
+MRO(C) = C + Merge(MRO(A), MRO(B), AB)
+       = C +Merge(A, Object, B, Object, AB)
+       = C + A + Merge(Object, B, Object, B)
+       = C + A + B + Merge(Object, Object)
+      = C + A + B
+
+whenever we call any method from object C, then first the method will be searched in class C and then its
+left parent class A and then right parent class B
+Take head of the first list : A
+
+  ABC
+  A is head
+B C are tails
+
+  AB
+  A is head
+B is tail
+
+A - A is head, there is no tail
+
+2nd example:
+
+MRO(A) = A, object
+MRO(B)= B, object
+MRO(C) = C, A, object
+MRO(D) = D, A, B, object
+MRO(E) = E, B, object
+MRO(F) = F + Merge(MRO(C), MRO(D), MRO(E),CDE)
+       = F+Merge(C, A, object,D, A, B, object,E, B, object, CDE)
+       = F+C + Merge(A, D, A, B, ,E, B, DE)
+      = F+C + A + Merge(D,B,E, B, DE)
+      = F+C+A+D+Merge(B,E,B,E)
+     F+C+A+D+B+Merge(E,E)
+    F+C+A+D+B+E
+
+Example
+merge(A,B, CAD)
+B+merge(A,CAD)
+B+C+merge(A,AD)
+B+C+A+merge(D)
+B+C+A+D
+
+Polymorphism:
+
+Poly - Many
+Morphs - Forms
+
+Many forms of operator or method or constructor
+
+Overloading - Operator Overloading, Method Overloading, Constructor overloading
+
+Overriding - Method overriding, Constructor overriding
+
+Duck typing philosophy in Python : 
+
+java, we need to sepcify the data type for any variable
+
+in python, we cannot specify the type 
+
+  x= 12 --- dynamically type language
+based on the value provided, in the run time the evaluation takes place
+
+
+class A:
+    def method1(self):
+         print("in A")
+class B:
+     def method1(self):
+         print("in B")
+class C:
+     def method1(self):
+         print("in C")
+
+def function1(obj):
+     obj.method1()
+
+myobjectlist =[A(), B(), C()] # List of objects
+for obj in myobjectlist:
+       function1(obj)
+
+
+
+Overloading:
+Operator overloading
++, *
+
+ + : we can use to add 2 numbers -- one form
+ + : to concatenate 2 strings --- other form
+
+  print(30+20) #50
+  print("hello"+"how are you") # hello how are you
+
+  * : this is used for multiplication of numbers
+    : this for string repetition
+
+   print(20*2) # 40
+   print("python"*4) # pythonpythonpythonpython
+
+  <=
+  >=
+
+method overloading
+ sendemail(toaddress, fromaddress, subject, body) - one form, without attachment
+ sendemail(toaddress, fromaddress, subject, body, attachment) -- other form, with attachment
+
+
+
+#Method overloading example
+class NumberProcessor:
+     def add(self,a,b):
+          c = a+b
+          print(c,"obtained from 2 arg addition")
+
+     def add(self,a,b,c):
+           d = a+b+c
+           print(d,"obtained from 3 arg addition")
+
+processor = NumberProcessor()
+processor.add(2,3)
+processor.add(2,3,5)
+
+
+constructor
+
+class NumberProcessor:
+       def __init__(self):
+            print("constructor with no args")
+
+       def __init__(self,a):
+             print("constructor with one argument")
+
+       def __init__(self, a, b):
+                print("constructor with two arguments")
+
+processor = NumberProcessor()
+processor = NumberProcessor(10)
+processor = NumberProcessor(10,20)
+
+class NumberProcessor:
+      def __init__(self, *a): #This constructor multiple arguments
+            print("constructor with variable number of arguments")
+
+
+processor = NumberProcessor()
+processor = NumberProcessor(10)
+processor = NumberProcessor(10,20)
+
+Python does not support constructor and method overloading completely.
+Only one overloaded or only 1 overloaded constructor can be called
+
+Overriding
+
+Method Overriding --- parent and child class relationship
+
+In parent class, whatever the member variables, methods are present, by default these will be available
+to child class also
+chilc class can redefine the methods inherited from parent class
+
+class HomeLoanTaxCalculator:
+    def calculateTax() :
+      print("in calculateTax") 
+
+class AdvancedHomeLoanTaxCalculator(HomeLoanTaxCalculator):
+    def calculateTax() :
+      print("in advanced tax calculation") # new feature
+
+Constructor overriding
+
+class A:
+       def __init__(self):
+         print("in parent class constructor")
+
+class B(A):
+      def __init__(self):
+         print("in child class constructor")
+
+b = B()
+       
+
+case 1: if child class has constructor, whenever we create the child class object, child class constructor 
+gets executed
+
+case 2: If child class does not have constructor, whenever we create the child class object, parent class 
+constructor gets executed
+
+case 3: If child class has constructor, whenever we create the child class object, to invoke parent class 
+constructor also from child constructor, we use super() in the child class constructor
+
+Abstract method:
+The methods which do not have implementation are called abstract methods, 
+the methods which has only declaration but not implementation
+
+we can declare abstract method as follow
+
+
+class A:
+   @abstractmethod
+   def method1(self):
+       pass
+
+error: abstract method not defined
+
+@abstractmethod is present in abc module
+
+from abc import *
+class A:
+   @abstractmethod
+   def method1(self):
+     pass
+
+
+public, private attributes:
+by default every attribute declared in python is public
+
+public - we can access that attribute anywhere from outside or inside the class
+
+class Student:
+    schoolname = 'little flower school'
+
+
+
+private - we can access the attribute only within the class
+
+__name --- private variable
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 

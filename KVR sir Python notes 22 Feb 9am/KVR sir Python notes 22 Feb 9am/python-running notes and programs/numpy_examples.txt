@@ -1,0 +1,297 @@
+Python 3.6.5 |Anaconda, Inc.| (default, Mar 29 2018, 13:32:41) [MSC v.1900 64 bit (AMD64)]
+Type "copyright", "credits" or "license" for more information.
+
+IPython 6.4.0 -- An enhanced Interactive Python.
+
+runfile('C:/python-training/numpy_examples.py', wdir='C:/python-training')
+[0 1 2 3 4 5]
+
+runfile('C:/python-training/numpy_examples.py', wdir='C:/python-training')
+[0 1 2 3 4 5]
+[0 1 2 3 4 5 6 7 8 9]
+
+timeit [i**2 for i in mylist]
+Traceback (most recent call last):
+
+  File "<ipython-input-3-9d13e09a773e>", line 1, in <module>
+    get_ipython().run_line_magic('timeit', '[i**2 for i in mylist]')
+
+  File "C:\Users\Kiran\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py", line 2131, in run_line_magic
+    result = fn(*args,**kwargs)
+
+  File "<decorator-gen-62>", line 2, in timeit
+
+  File "C:\Users\Kiran\Anaconda3\lib\site-packages\IPython\core\magic.py", line 187, in <lambda>
+    call = lambda f, *a, **k: f(*a, **k)
+
+  File "C:\Users\Kiran\Anaconda3\lib\site-packages\IPython\core\magics\execution.py", line 1098, in timeit
+    time_number = timer.timeit(number)
+
+  File "C:\Users\Kiran\Anaconda3\lib\site-packages\IPython\core\magics\execution.py", line 160, in timeit
+    timing = self.inner(it, self.timer)
+
+  File "<magic-timeit>", line 1, in inner
+
+NameError: name 'mylist' is not defined
+
+
+
+
+mylist = range(1000)
+
+timeit [i**2 for i in mylist]
+627 µs ± 64.4 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+
+import numpy as np
+
+a = np.arange(1000)
+
+timeit a**2
+7.34 µs ± 64 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+a = np.array([0,1,2,3,4,5])
+
+a.ndim
+Out[10]: 1
+
+a.shape
+Out[11]: (6,)
+
+len(a)
+Out[12]: 6
+
+b = np.array([[0,1,2],[3,4,5]])
+
+print(b)
+[[0 1 2]
+ [3 4 5]]
+
+b.ndim
+Out[15]: 2
+
+len(b)
+Out[16]: 2
+
+b1 = np.array([[0,1],[2,3],[4,5]])
+
+b1.ndim
+Out[18]: 2
+
+b1 = np.array([[[0,1],[2,3]],[[4,5],[6,7]]])
+
+b1.ndim
+Out[20]: 3
+
+b1.shape
+Out[21]: (2, 2, 2)
+
+b.shape
+Out[22]: (2, 3)
+
+len(b1)
+Out[23]: 2
+
+a = np.arange(1,10,2)
+
+print(a)
+[1 3 5 7 9]
+
+a=np.linspace(0,1,6)
+
+print(a)
+[0.  0.2 0.4 0.6 0.8 1. ]
+
+a= np.ones((2,2))
+
+print(a)
+[[1. 1.]
+ [1. 1.]]
+
+a= np.ones((3,3))
+
+print(a)
+[[1. 1. 1.]
+ [1. 1. 1.]
+ [1. 1. 1.]]
+
+a= np.ones((3,4))
+
+print(a)
+[[1. 1. 1. 1.]
+ [1. 1. 1. 1.]
+ [1. 1. 1. 1.]]
+
+a=np.zeros((2,2))
+
+print(a)
+[[0. 0.]
+ [0. 0.]]
+
+a=np.eye(4)
+
+print(a)
+[[1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]]
+
+a=np.diag([1,2,3,4])
+
+print(a)
+[[1 0 0 0]
+ [0 2 0 0]
+ [0 0 3 0]
+ [0 0 0 4]]
+
+a=np.random.rand(5)
+
+print(a)
+[0.98221826 0.96903139 0.65939192 0.29430584 0.54360714]
+
+a = np.arange(1)
+
+a = np.arange(10)
+
+a.dtype
+Out[44]: dtype('int32')
+
+print(a[5])
+5
+
+print(a)
+[0 1 2 3 4 5 6 7 8 9]
+
+a[4]=100
+
+print(a)
+[  0   1   2   3 100   5   6   7   8   9]
+
+a[1:6:2]
+Out[49]: array([1, 3, 5])
+
+a[5:]
+Out[50]: array([5, 6, 7, 8, 9])
+
+b=np.arange(5)
+
+a[5:]=b[::-1]
+
+print(a)
+[  0   1   2   3 100   4   3   2   1   0]
+
+a+1
+Out[54]: array([  1,   2,   3,   4, 101,   5,   4,   3,   2,   1])
+
+a**2
+Out[55]: 
+array([    0,     1,     4,     9, 10000,    16,     9,     4,     1,
+           0], dtype=int32)
+
+a*b
+Traceback (most recent call last):
+
+  File "<ipython-input-56-8ce765dcfa30>", line 1, in <module>
+    a*b
+
+ValueError: operands could not be broadcast together with shapes (10,) (5,) 
+
+
+
+
+a=np.arange(5)
+
+b=np.arange(4)
+
+a*b
+Traceback (most recent call last):
+
+  File "<ipython-input-59-8ce765dcfa30>", line 1, in <module>
+    a*b
+
+ValueError: operands could not be broadcast together with shapes (5,) (4,) 
+
+
+
+
+a=np.array([1,2],[2,3])
+Traceback (most recent call last):
+
+  File "<ipython-input-60-b6355b5ed9c2>", line 1, in <module>
+    a=np.array([1,2],[2,3])
+
+TypeError: data type not understood
+
+
+
+
+a=np.array([[1,2],[2,3]])
+
+print(a)
+[[1 2]
+ [2 3]]
+
+b=np.array([[4,5],[6,7]])
+
+a*b
+Out[64]: 
+array([[ 4, 10],
+       [12, 21]])
+
+a==b
+Out[65]: 
+array([[False, False],
+       [False, False]])
+
+np.array_equal(a,b)
+Out[66]: False
+
+a.min()
+Out[67]: 1
+
+a.max()
+Out[68]: 3
+
+b.max()
+Out[69]: 7
+
+a.argmin()
+Out[70]: 0
+
+a.argmax()
+Out[71]: 3
+
+b=np.arange(10)
+
+print(b)
+[0 1 2 3 4 5 6 7 8 9]
+
+b = b.reshape((4,2))
+Traceback (most recent call last):
+
+  File "<ipython-input-74-e05272d24584>", line 1, in <module>
+    b = b.reshape((4,2))
+
+ValueError: cannot reshape array of size 10 into shape (4,2)
+
+
+
+
+print(b)
+[0 1 2 3 4 5 6 7 8 9]
+
+b = b.reshape((2,4))
+Traceback (most recent call last):
+
+  File "<ipython-input-76-54594c4089ce>", line 1, in <module>
+    b = b.reshape((2,4))
+
+ValueError: cannot reshape array of size 10 into shape (2,4)
+
+
+
+
+b = b.reshape((2,5))
+
+print(b)
+[[0 1 2 3 4]
+ [5 6 7 8 9]]

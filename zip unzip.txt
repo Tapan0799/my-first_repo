@@ -1,0 +1,19 @@
+# --------------------ZIP and Unzip---------------------
+# import zipfile
+
+#zip
+# var = zipfile.ZipFile('D:\\batch_6_find_handeling_notes.zip','w',zipfile.ZIP_DEFLATED) # zip a file with name
+# # var.write('D:\\TREENETRA\\Treenetra_class_notes\\cs_nayak.jpg')
+# var.write('C:\\Users\\chand\\PycharmProjects\\PythonAutomationAllBatch\\TREENETRA_AT_6\\AdvancePython\\FileHandeling\\file_handeling.py')
+
+
+#unzip
+
+# import zipfile
+#
+# file_name = 'new_zip_6.zip'
+#
+# var = zipfile.ZipFile(file_name,'r')
+# print(var.printdir())
+# var.extractall()
+# print('Done')

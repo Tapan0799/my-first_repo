@@ -1,0 +1,685 @@
+what are various control statements in python
+
+conditional statements - if, if-elif, if-elif-else
+Iterative statements -- for, while
+Transfer control statements -- continue, pass, break
+
+what is range - sequence of numbers it is a data type
+
+problems using control statements and range data types
+
+1. write a python program to display string characters and determine
+length of string
+str='india'
+for ch in str:
+    print(ch)
+n=len(str)
+print("length",n)
+
+2. write a python program to print reverse of string
+1st way
+str=input("enter some string")
+print(str[::-1])
+
+2nd way
+str=input("enter some string")
+print(".join(reversed(str)))
+
+str=india
+result=aidni
+3rd way
+str=input("enter some string")
+counter=len(str)-1
+result=''
+while counter>=0:
+   result = result+str[counter]
+   counter=counter-1
+print(result)
+
+3. write a python program to reverse order of words
+in a given statement
+Input: The sun raises in the east
+Output: East the in raises sun The
+
+input="The sun raises in the east"
+subinput = input.split()
+temp = []
+counter = len(subinput)-1
+print(counter)
+while counter>=0:
+   temp.append(subinput[counter])
+   temp.append(' ')
+   counter=counter-1
+result=''.join(temp)
+print(result)
+
+4. write a python program to reverse internal content of each word
+Input: The sun raises in the east
+output: ehT nus sesiar ni eht tsae
+
+
+input="The sun raises in the east"
+subinput = input.split()
+temp = []
+counter=0
+while counter<len(subinput):
+   temp.append(subinput[counter][::-1])
+   temp.append(' ')
+   counter=counter+1
+result=''.join(temp)
+print(result)
+
+5. to determine running times or time complexities of the programs
+n=10
+for i in range(0,n):
+  print("hello")
+
+the program executes for n times
+
+n=20
+for i in range(0,n): # executed n times
+    for j in range(0,n): # executed n times
+      print("hello")
+running time : n*n = n^2
+
+n=40
+i=1
+while i<=n:
+   i=i*2
+   print("hello")
+
+This loop is running for log(n) times
+
+In first iteration, i=2 = 2^1
+in second iteration, i=4 = 2^2
+in 3rd iteration, i=8 = 2^3
+in 4th iteration, i=16 = 2^4
+in 5th iteration, i=32= 2^5
+
+let us assume this loop runs k iterations
+in kth  iteration, i = 2^k
+
+when loop runs k iterations, i=n
+
+2^k = n
+log(2^k) = log(n)
+k=log(n) base 2
+k=log(n)
+
+Exercise: what is running time of this
+n=40
+i=n
+while i>=1:
+   i=i/2
+   print("hello")
+log(n) times
+
+6. What are various mutable and inmutable built in data types in Python
+Mutable built in types:
+List
+Sets
+Dictionaries
+Immutable built in types:
+Strings
+Tuples
+
+7. Explain range function
+range function generates sequence of numbers
+range(start,end,step)
+example: range(0,5) --- 0,1,2,3,4
+
+7. Examples in List and show any example for List Immutability
+creating list object
+
+option1 : list function
+
+mylist = list(range(0,10))
+type(mylist) #the type of the list
+
+mylist = list(range(0,10,2))
+[0,2,4,6,8]
+
+option 2: convert string from list
+using split() function
+str="hello how are you"
+mylist=str.split()
+
+option3: creatin list statically
+example: mylist=[20,2526]
+
+show how list is mutable
+mylist=[20,25,30,68]
+print(mylist)
+mylist[2]=40
+print(mylist)
+
+In this we can modify the list elements. This property is called mutablity
+
+8. what are the different ways of accessing the list elements
+option 1: by using index
+list index support +ve and -ve indexs
+mylist=[10,14,23,35,56,75,89]
+print(mylist[-1])
+print(mylist[4])
+print(mylist[15]) #index out of range error
+
+option 2: by using slice opertaor
+list[start:stop:step]
+
+the step can be +ve or -ve step
+by default if start is not specified, start is 0
+by default if step is not specified, step is +ve and value is 1
+by default stop is not specified, stop is the last index
+if step is +ve, consider list elements from left to right
+where it starts from index specified by start value and ends till stop-1 index
+
+if step is -ve, consider list elements from right to left
+where it starts from index specified by start value and ends till stop+1 index
+
+mylist=[10,14,23,35,56,75,89]
+print(mylist[0:5])
+print(mylist[5:2:-1])
+#start = 5th index
+#stop = 2+1=3rd index
+print(mylist[4:2:-2])
+#start = 4th index
+#and goes till stop+1=2+1=3rd index with increment steps of 2
+print(mylist[4:2:-1])
+
+9. how we can we traverse list elements
+
+option 1: use for loop
+write python program to display  even numbers from the given list
+mynumbers=[0,2,3,13,17,24,32,45,89,90]
+for mynumber in mynumbers:
+   if mynumber%2==0:
+      print(mynumber)
+write python program to generate a new list that contains odd numbers from the given list
+mynumbers=[0,2,3,13,17,24,32,45,89,90]
+oddnumberlist=[]
+for mynumber in mynumbers:
+   if mynumber%2!=0:
+      oddnumberlist.append(mynumber)
+print(oddnumberlist)
+
+10. what is insert() function in the list
+     This will insert item at specific index position
+    mylist=[2,7,9,8]
+    mylist.insert[2,56]
+    print(mylist)
+    #output [2,7,9,56,8]
+
+11. What is remove() function in list
+   This will remove the particular element from list
+     mylist=[2,7,9,8]
+     mylist.remov(9) # this will remove 9 from list
+    If we specify the element that is not in the list remove method, we get error
+
+12. pop() function in list
+     It removes and returns the last element of the list
+    mylist=[20,40,65,76]
+    print(mylist.pop())
+   print(mylist.pop())
+
+13. what are the difference between pop() and remove()
+      difference 1: remove() will remove the particular element from the list
+      pop() will remove the last element from list
+    difference 2 :remove() cannot return any value
+       pop() will return the removed element
+    difference 3: if the elemment is not in the list, remove will give error
+         if the list is empty, pop will give error
+14. how can we reverse the elements of the list
+      there is reverse function
+    mylist=[2,4,7,8]
+    mylist.reverse()
+    print(mylist)
+15. sorting function
+    mylist=[20,5,6,8,10]
+    mylist.sort() # by default ascending order
+    print(mylist)
+    mylist.sort(reverse=True) # sport in descending order
+
+16. what are membership operators in list
+    in and not in operators
+     membership operators will check if the element is present in the list or not
+     mylist=[10,20,30,40]
+     print(20 in mylist)
+     print(40 not in mylist)
+
+17. Give examples for nested lists
+   List inside another list is called nested list
+    mylist=[10,30,[25,26,27]]
+    print(mylist[2])
+    print(mylist[2][2]) # output is 27
+18. what is difference between array and list
+     array can store only one type of elements
+     list can store different types of elements
+     list size can increase dynamically 
+
+19. what is difference between list and tuple
+   Tuple is same as List but Tuple is immutable
+  we cannot modify the tuple object once it is created
+   In dictionaries, list objects cannot be used as keys because keys are immutable
+In dictionaries, tuple objects can be used as keys
+   In both tuple and list, hetrogeneous(different data type elements) can be stored
+    In both tuple and list, duplicates are allowed
+     In both tuple and list, insertion order is preserved
+     In both tuple and list, +ve and -ve indexes are supported
+    List is specified by []
+    Tuple is specified by () --- optional
+      
+    mytuple=(10,20,30,40)
+    mytuple=10,20,30,40
+  
+  20. How we can convert list to tuple
+      mylist=[10,15,20]
+      mytuple=tuple(mylist)
+     print(mytuple)
+
+21. Explain dictionary with examples
+   dictionary is used to represent key-value pairs
+    name- ramesh 
+    age - 20
+  duplicate keys are not allowed
+Kyes are immutable
+dictionaries are mutable
+Hetrogeneous objects can be used for keys and values
+
+create a dictionary
+   mydict={'name':'ramesh','age':20}
+access dictionary
+ print(mydict['name'])
+
+22. Examples on arrays and numpy library
+   we can use numpy to work with multi dimensional arrays
+   to start with basic array we can use import array module
+   arrays are datastructures that stores homogeneous objects
+     
+to create an integer type array
+   import array
+   myarray = array.array('i',[4,1,2,3])
+   for element in myarray:
+      print(element)
+
+how we can perform indexing and slicing in array
+       myarray=array.array('i',[5,10,15,20])
+       result = myarray[1:3]
+       result=myarry[-3:]
+
+using numpy how we can process multidmiensional arrays
+create a single dimensional array using numpy
+import numpy
+myarray=numpy.array([10,20,40])
+print(myarray)
+
+create a string type array using numpy
+import numpy
+myarray=numpy.array(['januray','february','march'])
+print(myarray)
+
+creating arrays using linspace
+The linspace() function creates array with evenly spaced points between start point
+and end point
+linspace(start,stop,n)
+start represents the starting element
+stop reprsents the ending element
+n reprsent the number of parts of the elements should be divided
+myarray=numpy.linspace(0,10,5)
+
+what is arange() function in numpy'
+arange function is similar to range function in python
+
+import numpy
+myarray = numpy.arange(1,20,2)
+print(myarray)
+
+mathematical operations on arrays
+sin(arr) -- this calculate sine value of each element of array
+cos(arr) - this calculate cosine value of each element of array
+exp(arr)- this calculate exponentail value of each element of array
+min(arr) - this will give minium element in the array
+max(arr) - this will give maxium element in array
+sum(arr)- this will give the sum of elements of the array
+prod(arr) - this will give product of elements of array
+
+comparision of 2 different array elements <,>,>=
+import numpy
+myarray=numpy.array([2,4,7,3])
+myarray1=numpy.array([0,1,3,5])
+result = myarray>myarray1
+print(result)
+
+reshape method
+The reshape method is used to change the shape of an array
+import numpy
+myarray=numpy.arange(10)
+print(myarray)
+
+convert this to 2 dimensional array with 2 rows and 5 columns
+
+myarray.reshape(2,5)
+
+flatten - this is used to convert multidimensional to single dimensional and returns
+a new array
+import numpy
+myarray=numpy.array([[0, 1, 2, 3, 4],[5, 6, 7, 8, 9]])
+myarray1=myarray.flatten()
+print(myarray1)
+
+decoratiors, modules, list coimporeshension, oops coinecpts in python, threads
+
+
+Functions:
+Functions are group of statements that does some task and a unit of work
+
+built in functions:
+type() - returns the data type of the object
+eval()  - evaluate an expression if the expression is legal python statement
+input() - function that takes input values
+
+User defined functions:
+def---keyword
+The function in python will start with def
+the function can have return value, it should have "return" key word
+Functiona also can take paraneters
+
+23. Write a python function to compute square of a given number
+    
+    def square(num):
+       result = num * num
+       return result
+
+    squarevalue = square(20)
+    print(squarevalue)
+
+24. Write a python function to compute factorial of a given number
+   #4
+   #1*2*3*4
+    #4*3*2*1
+
+    def factorial(num):
+       result = 1
+       while num>=1:
+           result = result*num
+           num=num-1
+       return result
+
+   factorialvalue = factorial(4)
+   print(factorialvalue)
+
+25. What are various type of arguments in python function
+     4 types
+     Positional arguments
+     Keword arguments
+     Variable length arguments
+     default arguments
+    Positional arguments: the arguments passed to the function order is preserved
+    here the position of the argument passed is important
+   
+     def division(a,b):
+         return a/b
+   
+    division(200,100)
+    division(100,200)
+
+    Keword arguments: we can pass keyword arguments by parameter name. Here the order
+of passing arguments is not important
+   
+   def division(a,b):
+       return a/b
+
+   division(a=200,b=100)
+
+  default arguments: we can pass some default values to the arguments in the function
+  
+Variable length arguments:
+     we can pass any number of arguments to a function
+    always variable length arguments represented by *
+   write a function that takes variable number of values and compute the sum
+
+  def function1(*num):
+     sum=0
+     for tempnum in num:
+       sum= sum+tempnum
+     print(sum)
+  
+  sum(5)
+  sum(5,6)
+  sum(5,6,7)
+
+26. what are different variables used in function
+   global variables : these variables are declared outside function.These
+   variables can be accessed in all functions of that module
+   local variables: The variables that are declared inside the function and accessed
+   within the function only
+ 
+   #x is global variable
+   x=20
+   def function1():
+      print(x)
+
+   def function2():
+      print(x)
+   
+   what is the use of global keyword
+   modify the global variable
+    we can declare global variable inside function
+   
+   what happens if global variable and local variable have the same name
+    when we try to access the variable in the function, the preference is given
+to the local variable value
+  To access the global variable value, we can use globals()['<<variable name>>']
+
+  x=20
+def function1():
+    global x
+    y=100
+    x=40 #modifying the global variable
+    print(x)
+    print(y)
+def function2():
+      print(x)
+
+def function3():
+    x=55 # local variable
+    print(x)
+    print(globals()['x'])
+
+#function1()
+#function2()
+function3()
+
+27. Write recursive function to find factorial of given number
+      
+     def factorial(num):
+        if num==0:
+           result = 1
+        else:
+           result = num * factorial(num-1)
+        return result
+
+    print(factorial(4))
+
+28. What are Lamdbda functions in python
+      these are a type of nonymous functions where we can write in less number of lines
+
+      squarevalue=lambda num:num*num
+      print(squarevalue(10))
+      print(squarevalue(20))
+
+29. What are modules in python
+      a group of functions, variables and classes saved to files are called modules
+
+30. What is class in OOPS
+    class is a blue print or a model to create objects
+    object is real time entity that exists in real world
+
+31. What are different types of methods
+     Instance methods : Instance methods uses instance variables inside the methods.
+Inside instance method declaration, we have to pass self (the current object) in the 
+method.
+   class methods: Inside method implementation, if we are using only 
+class variables(static variables), then these methods to be declared using @classmethod
+decorator. In these methods, we should pass cls variable as the first method parameter
+    static methods :
+         These methods will be declared by passing @staticmethod decorator.
+We can access static methods by classname or object reference
+These methods will not take self or cls variables as method arguments
+
+32. What is the use of constructor
+      constructor is used at the time of object creation
+      The name of the constructor is __init__(self)
+      constructor is also special type of method
+     
+      class Stduent:
+         def __init__(self, name, rollno,age):
+               self.name=name
+               self.rollno=rollno
+               self.age=age
+         def display(self):
+                   print(self.name,self.rollno,self.age)
+ 
+     student1 = Student("Ramesh",20,20)
+     student1.display()
+    student1.age=23
+     student2 = Stduent("Rajesh",30,21)
+     student2.display()
+
+33. What  are types of variables
+     Instance variables - the value of variable is changed from one object to other object
+     static variables - the value of the variable is same for all the objects created from the same class
+     local variables - the variables used in the method
+
+    Instance variables are used inside constructor by using self key word
+   Instance variables are used inside instance methods using self key word
+   Instance variables can be used outside the class using object reference variable
+
+   static variables are used inside constructor by class name
+    inside class method by using either class name or cls variable
+    inside static method by using class name
+    static methods are also used for utility methods
+
+  
+      @classmethod
+      def method1(cls)
+
+     @staticmethod
+     def method3():
+34. Inheritence 
+   type of inheritance
+    inheritance vs composition
+   method resolution order
+   super() method
+
+  inheritance: "is-a" relationship
+   composition : "has-a" relationship
+
+   class A:
+      a=20
+      def method1(self):
+        print("in A method1")
+   class B(A):
+      def method1(self):
+        print("in B method1")
+ 
+   b = B()
+   b.method1()
+
+types of inheritance
+single inheritance
+multilevel inheritance
+mutiple inheritance
+heriarcial inheritance
+hybrid inheritance
+
+What is MRO?
+In hybrid inheritance, MRO will deterimine which method to taken.
+The order will be taken from the left parent of the class from where the object is create
+incase if the method is not available in the class where the object is created
+
+what is polymprphism
+Many forms of the method. With same method name, we can have different tasks to be peformed
+
+sendemail(String to, String from)
+sendemail(String to, String from, Attachment attachment)
+
+Overloading - operaror overloading, constructor overloading, method overloading
+Overriding - method overriding, constructor overriding
+
+Abstaction --- hiding the complexity details and exposing the required functions
+
+abstract method, abstract class, interface
+
+35. what are decorators - decorator is a function which cna take functiona as argument and
+add new functionality or modify existing functionality
+
+36. Generator- generator generates sequence of data on demand that saves the memory usage
+
+37. Object serailization - converting python object to byte stream - serialization
+      byte stream to python object - deserialization
+
+   Using JSON, Using YAML, using Pickle(python module for serialization)
+
+38. Exception handling: try-except
+   try-except
+  try-multiple except blocks
+  finally block - close the resources
+
+39. file handling - text files, binary files
+
+40. write python program to generate patterns 
+****
+ ***
+  **
+   *
+
+*
+**
+***
+****
+
+  *
+ * *
+* * *
+
+41. using Pandas how to create dataframe from .csv file
+42. Using pandas how to create dataframe from python list of tuples
+43. Using Pandas, list some operations on data frames
+44. What is use of decorator and generator
+
+    
+    
+
+             
+
+
+    
+
+    
+ 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

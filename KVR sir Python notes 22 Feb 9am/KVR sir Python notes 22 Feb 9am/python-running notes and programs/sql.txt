@@ -1,0 +1,54 @@
+1. list the employees whose salary is greater than average salary of all the employees
+
+sub queries
+
+a query inside another query is subquery
+this subquery can return single rows or multiple rows
+
+
+   select * from employee where emp_salary >( select avg(emp_salary) from employee )
+
+
+   select * from employee where emp_salary > 22500
+
+
+2. list the max salary in the employee table
+
+select max(emp_salary) from employee;
+
+3. *** important interview question
+
+   find the 2nd highest salary from the employee table
+
+
+   select * from employee where emp_salary = (select max(A.emp_salary) 
+from (select emp_name, emp_id, emp_salary from employee where emp_salary 
+< (select max(emp_salary) from employee) ) A)
+
+
+
+write small sql query -- result -- assume this as one logical table
+write one more query to select the data from the above table
+
+how can we find nth highest salary
+
+select count(1) from employee where emp_salary > 15000
+
+  
+   select emp_salary from employee A where 2 = (select count(1) from employee B where B.emp_salary>A.emp_salary)
+
+nth highest salary
+  select emp_salary from employee A where 3 = (select count(1) from employee B where B.emp_salary>=A.emp_salary)
+
+
+select emp_salary,count(*) from employee A, employee B where B.emp_salary>A.emp_salary
+
+
+
+join operations
+
+joining multiple tables based on column values
+
+inner join
+
+select A.emp_id, B.dept_id from Employee A Inner join Department B on A.dept_id=B.dept_id

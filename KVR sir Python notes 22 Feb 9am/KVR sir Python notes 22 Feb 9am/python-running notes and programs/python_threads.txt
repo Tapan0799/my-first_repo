@@ -1,0 +1,26 @@
+Python Threads:
+
+what are threads-- Threads are light weight process and threads used in server
+side program
+
+thread does some task
+
+say if we have 2 threads, 2 therads process the task in parallel
+
+Python supports multi threading
+
+there are different ways of creating threads
+1. Creating a thread without using a class
+2. Creating a thread by creating subclass(child class) to thread class
+3. creating a thread without creating subclass to thread class
+
+
+one program that has 2 threads running parallely
+one person is a thread and he is on the lorry(truck) and unloading the goods from lorry(truck) and giving it 
+to the person who is outside truck
+the person who is outside of truck is taking those goods and putting inside factory
+
+ 
+
+
+

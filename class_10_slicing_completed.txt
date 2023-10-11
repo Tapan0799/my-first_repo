@@ -1,0 +1,125 @@
+Slicing Of a String:-
+-------------------
+When we slicce a sub string into a string this time we call string slicing.
+
+Rule:-
+----
+Python is a zero base index system
+Left to Right positive index:- starts from 0
+Right to Left Negetive index :- starts from -1
+
+Square bracket([]) use for opeartor of slicing.
+
+Syntax:-
+
+Variable[start:end+1:steps] 
+
+Ex:-
+Postive
+>>> a[0:3:1]
+'Qwe'
+>>> a[1:5:1]
+'wert'
+>>> a[0:3]
+'Qwe'
+>>> a[1:5]
+'wert'
+>>> 
+
+
+Negetive:-
+
+>>> a[-5:-1]
+'wert'
+>>> a[-6:-3]
+'Qwe'
+>>> 
+
+--------------------------------------
+Topic se bahar, just for showing
+
+bank = input("Enter your bank name:-")
+ifsc = int(input("Enter your ifsc:-"))
+
+b_new = bank.split(' ')
+#print(b_new)
+b = []
+for i in b_new:
+    b.append(i[0])
+    if i == 'India':
+        b.append(i[1])
+a = ''
+for j in b:
+    a = a+j
+a= a+str(ifsc)
+print(a)
+----------------------
+s = 'Harishankar'
+print(s[4:])
+
+
+
+>>> Name = 'Chandra Sekhar'
+>>> DOB = '17/03/1997'
+>>> #Chan1997
+>>> #string ka math
+>>> #sum(+), mul(*)
+>>> 
+>>> #sum :- string add with only a string
+>>> 'A'+4
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    'A'+4
+TypeError: can only concatenate str (not "int") to str
+>>> 'A'+'B'
+'AB'
+>>> 'ABCD'+'XYZ'
+'ABCDXYZ'
+>>> 
+>>> #mul :- string prod with int only
+>>> 
+>>> 'AB'*'AB'
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    'AB'*'AB'
+TypeError: can't multiply sequence by non-int of type 'str'
+>>> 'AB'*2
+'ABAB'
+>>> 'AB'*3
+'ABABAB'
+>>> Name = 'Chandra Sekhar'
+>>> DOB = '17/03/1997'
+>>> 
+>>> password = Name[0:4]+DOB[-4:]
+>>> password
+'Chan1997'
+>>> 
+>>> bank = 'state bank of india'
+>>> branch = 100927
+>>> 
+>>> 
+>>> 
+>>> Name = 'Sushant Sigh'
+>>> v_num = 'MH-12-GH-6756'
+>>> house = '13B-789'
+>>> dob = '13/8/1991'
+>>> 
+>>> #Name-first(3),v_num(state and v_number),house(upper and special),dob(year) and last(3)
+>>> #SusMH6756B-1991
+>>> #SusMH6756B-1991igh
+>>> 
+>>> 
+>>> a = 90
+>>> type(a)
+<class 'int'>
+>>> a = str(a)
+>>> a
+'90'
+>>> type(a)
+<class 'str'>
+>>> 
+>>> 
+>>> s = 'Banglore is capital of Karnataka'
+>>> s[::-1]
+'akatanraK fo latipac si erolgnaB'
+>>> 

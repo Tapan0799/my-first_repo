@@ -1,0 +1,23 @@
+   Numpy
+
+   this python package for multi dimensioal arrays
+
+used for scientific computation , used in data science 
+
+
+  dimensions
+
+   1 dimension : vector
+   2 dimenisons: matrix
+
+   3 dimensions : cube
+
+
+   N dimension : array
+
+Numpy works on N dimesion arrays
+
+install anaconda package, pandas will come as part of the bundle
+
+numpy computation is very fast
+

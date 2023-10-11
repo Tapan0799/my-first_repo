@@ -1,0 +1,388 @@
+List
+List is collection of hetrogeneous objects that can preserve the insertion order
+allows duplicate objects
+List is mutable - we can add, update the elements in the list
+
+Creation of list
+1. list function:
+
+mylist = list(range(0,10))
+print(mylist)
+
+2. creating list from string
+    str = "hello world welcome to python"
+    mylist = str.split() # it will split the string by spaces
+    print(mylist)
+
+we can access list elements
+we can access by using index
++ve and -ve index
+
+fruits=['apple','banana','grapes']
+print(fruits[1]) # banana
+print(fruits[-3])
+
+
+we can access list elements by using slice operator
+
+list[startindex:stopindex:step]
+
+default startindex : 0
+default step value is 1
+
+if stopindex is specified, the list will be accessed till stopindex-1 if step is +ve
+if stopindex is specified, the list will be accessed till stopindex+1 if step is -ve
+
+mylist=list(range(0,10))
+print(mylist)
+#[0,1,2,3,4,5,6,7,8,9]
+print(mylist[2:4])
+#[2,3]
+print(mylist[6:1:-2])
+print(mylist[15])
+#list index out of range
+
+3. can you give example how list is mutable
+mylist=[3,6,18,27,54]
+print(mylist)
+mylist[2]=12
+print(mylist)
+
+4. Write examples to traverse list elements
+  4.1 write a program to print first 10 odd numbers from the numbers between 1 to 100
+
+   mylist=list(range(1,101))
+   counter=0
+   for x in mylist:
+        if x%2!=0:
+           counter=counter+1
+           if(counter<=10):
+           	print(x)
+           else:
+              break
+
+  4.2 write a program to read first 10 even numbers between 1 to 100 
+and add those even numbers in a new list
+
+  mylist = list(range(1,100))
+  evennumberlist = []
+  counter=0
+  for x in mylist:
+       if x%2==0:
+          counter=counter+1
+          if(counter<=10):
+            evennumberlist.append(x)
+          else:
+            break
+  print(evennumberlist)
+            
+ # append function will add items to the end of the list
+
+4.3 some python list  functions
+     insert() will add to specific index position
+     mylist=[2,5,7,9,12]
+     mylist.insert(3,29)
+     mylist.insert(-2,36)
+     remove() - this will remove the specific value from the list
+     mylist.remove(9)
+      
+     extend() function: this will add all items of one list to the other list
+     fruitslist =['apple','banana','grapes']
+     vegetablelist = ['brinjal','potatto']
+     vegetablelist.extend(fruitslist)
+
+    pop() function: remove the last element of the list and returns the element also
+    mylist=[2,5,7,9,12]
+    print(mylist.pop())
+
+    reverse() : this will reverse the order of elements of the list
+    mylist=[1,2,3,4,5]
+    mylist.reverse()
+    print(mylist)
+
+    sort() : this will sort  the  elements in natural order(ascednig order)
+    mylist=[2,17,19,1,5,4]
+    mylist.sort() # ascending order
+    print(mylist)
+
+    mylist=['ramesh','apple','ravi','banana']
+    mylist.sort()
+    print(mylist)
+
+    mylist=[2,17,19,1,5,4]
+    mylist.sort(reverse=True) #descending order
+    print(mylist)
+
+
+4.4 str='''this is line 1
+           this is line 2
+           this is line 3
+           this is line 4'''
+
+
+5. Cloning of list objects:
+what is the use of list cloning
+we know that list is mutable. 
+
+studentIds=['A101','A234','A567','A789']
+duplicatestudentIds = studentIds
+duplicatestudentIds[2]='X101'
+
+to preven this kind of updations made by one reference which affects the other
+reference, we can clone the object for the other reference
+
+Cloning: creating duplicate copy of the object
+
+we can implement cloning using slice operator or using copy() function
+studentIds=['A101','A234','A567','A789']
+duplicatestudentIds=studentIds[:]
+print(id(studentIds))
+print(id(duplicatestudentIds))
+duplicatestudentIds[2]='X101'
+
+
+we can use copy function to create a duplicate object
+studentIds=['A101','A234','A567','A789']
+duplicatestudentIds=studentIds.copy()
+
+6. How we can compare list objects
+If every element in the list is equal to the every element in the other list then lists
+are equal(number of elemements should be same, case sensitive, order of elements)
+
+fruits1=["grapes","apple","banana"]
+fruits2=["grapes","apple","banana"]
+fruits3=["GRAPES","APPLE","banana"]
+fruits4=["banana","grapes","apple"]
+fruits5=["grapes","apple","banana","orange"]
+print(fruits1==fruits2) # True
+print(fruits1==fruits3) #False
+print(fruits1==fruits4) # False
+print(fruits1==fruits5) # False
+
+There are some comparision operators like <, >, <=, >=
+When use these operations beteween the 2 lists, this will take the first element comparisions
+of the list and compare
+
+x=[2,1,7,8]
+y=[1,2,4,9,10]
+print(x>y)
+
+6. What are Membership operators
+   we can check whether the given element exists in the list or not
+  
+  in operator, not in operator
+
+   x=[2,1,7,8]
+   print(5 in x) #False
+   print(2 not in x) #False
+   print(7 in x) # True
+
+7. What are nested lists
+   A list that contains another list. A list can store hetrogeneous objects,
+   mylist=[12,'green',True, [2,3,4]]
+   print(mylist[3])
+   print(mylist[3][2]) # this will give 2nd element in the list , 4
+   print(mylist[3][0]) # this will give 2
+
+8. Mathematical operators that can be used in lists
+    concatentaion operator : +
+    we can combine 2 lists using +
+    x=[1,2,5,6]
+    y=[10,11,13,15]
+    z=x+y
+    print(z) # [1,2,5,6,10,11,13,15]
+  
+   Repetition operator (*) -- this operator will repeate based on the specified
+   number of times
+   x=[1,2,5,6]
+   y=x*3
+   print(y)
+   #[1,2,5,6,1,2,5,6,1,2,5,6]
+
+9. List comprehensions
+    This will create list objects in a single line of code, this is also
+   called compact way of creating list objects
+
+  mylist=[2*x for x in range(1,5)]
+
+  mylist=[x*x for x in range(1,5)]
+   
+   
+10. Tuples - Same as List except that Tuple is Immutable,
+Tuple once created, we cannot change the elements in the objects
+Tuple also just like list hetrogeneous objects, duplicate objects are allowed
+Tuple also supports +ve and -ve indexes
+List we can represent in []
+Tuple can be reprsented using () -- paranthesis
+but paranthesis is optional
+
+mytuple=(1,2,3,4,5)
+mytuple=1,2,3,4,5
+
+Create a tuple
+
+mytuple=()
+
+create single valued tuple
+mytuple=(1,)
+mytuple=1,
+
+multivalued tuple
+mytuple=1,2,3,4
+
+We can alos convert list to tuple
+list=[1,2,3,4,5]
+mytyuple = tuple(list) # tuple function takes list and convert to tuple
+   
+the elements in the tuple can be accessed by using index, slice operator similar to list
+
+Tuple immutablity
+mytuple=1,2,3,4
+mytuple[2]=5
+
+tuple supports concatentaion operator(+), repetition operator(*)
+ 
+tuple comprehension is also same as list but the return type is not a tuple object
+it is generator object
+result = (x*x for x in range(1,5))
+
+functions in tuple
+length - number of elements in the tuple len()
+count() - number of occurances of given element in the tuple
+mytuple = 1,2,2,2,4,5,6
+print(mytuple.count(2))  # 3 times
+sorted() - to sort tuple in ascending order
+min() and max() functions - this will give min and max value in the tuple
+
+python 2
+cmp function in tuple
+cmp(mytuple1, mytuple2)
+if both tuples are equal -0
+if first tuple is greater than second tuple, 1
+if first tuple is lesser than  2nd tuple -1
+mytuple1=1,2,3,4
+mytuple2=1,2,3,4
+print(cmp(mytuple, mytuple2))
+
+from python 3.5
+<,=,>=
+
+Sets:
+This will not allow duplicate elements
+Insertion order is not preserved
+{} -- set is represented with curly braces
+
+Creation of sets
+
+myset = {1,2,3,4}
+
+myset = set(range(1,10))
+
+adding elements to the set
+myset.add(10)
+
+to add multiple items to the set
+update function
+myset = set(range(1,10))
+myset1= set(range(20,30))
+myset2= set(range(40,60))
+myset.update(myset1,myset2)
+
+
+union of sets - combining 2 sets
+intesection of sets - taking common elements between 2 sets
+set difference - A-B (elements present in set A and not in B)
+symmetric difference
+
+A={1,2,4,5,6}
+B={2,5,6,8,10}
+print(A.union(B))
+print(A|B)
+
+print(A.intersection(B))
+print(A&B)
+
+print(A.difference(B))
+print(A-B)
+print(B-A)
+
+print(A.symmetric_difference(B))
+print(A^B)
+
+
+set objects will not support indexing and slicing
+
+11. what are dictionaries
+dictionaries store data in key, value pairs
+for every key there is a value
+student object
+id - 101
+name - rajesh
+dictionaries are mutable, we cna change the element(value) in the dictionary once the
+dictonary is created
+
+in dictionaries, indexing and slicing are not applicable
+dictionaries will store hetrogeneous objects for keys and values
+
+create dictionary
+d={}
+d=dict()
+d['studentId']=101
+d['stduentName']='Ramesh'
+print(d)
+
+delete entry based on the key
+del d[<key>]
+
+to remove all entries from dictionary
+d.clear()
+
+to get the number of elements in the dictionary
+d.len()
+
+##add few more dictionaries functions
+copy() - this will create cloned copy
+d1 - d.copy()
+
+setDefault - if the key is already available setDefault returns the corresponding value
+otherwise if the key is not available then the key-value specified in the setDefault
+function will be added as new item to the dictionary
+
+items()-
+it returns list of tuples from the dictionary
+mystudentdict={'id':101,'name':'sekar','age':20}
+for key,value in mystudentdict.items():
+   print(key,"-",value)
+
+values() - this will return all values associated with dictionary
+mystudentdict={'id':101,'name':'sekar','age':20}
+for value in mystudentdict.values():
+   print(value)
+
+keys() - returns all keys
+mystudentdict={'id':101,'name':'sekar','age':20}
+for key in mystudentdict.keys():
+   print(key)
+
+
+get() - this will get the value with the given key
+mystudentdict.get('id')
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+Language Fundamental:-
+--------------------
+
+Introduction:-
+------------
+
+> Python is a general purpose of high level programming laguage.
+
+    		Low Level:-
+
+			Binary num lang:== 0,1
+
+			A- 01000001
+
+			Developement :- It's very very slow
+			Production   :- It's very very fast.
+
+
+			Middle Level:-
+			-----------
+
+			Use Converter :- Convert english laguage to binary number
+
+			Development :- Very very fast.
+			Production:- Very very slow.
+
+
+			High Level:-
+			----------
+
+			Oops(Object Orient Programming) and Pops(Procedure Oriented Programming)
+
+			oops :- Rule and Regulation very very strict.(too many special char and symbol use) :- Java, C, Golang , .net
+
+			pops:- Not a difficult rules.(very less amount of special char use) :- Python, c++, perl (scripting)
+
+			Development :- Very very fast.
+			Production:- Fast.
+
+
+2.Python was developed by Guido Van Rossam in 1989 while working at National Research Insititue at Netherland.
+
+3. In officially python was made available to public in 1991 feb 20
+
+4. Python is scripting language and it's very easy to learn.
+
+
+Example :-
+
+print :- ' Hi T-44'
+
+Java:-
+
+public class Testing44
+{
+	p s v main(String[]args)
+	{
+		SOP("HI T-44")
+	}
+}
+
+
+C:-
+
+#include<stdio.h>
+void main()
+{
+	print("HI T-44")
+}
+
+
+Python:-
+-------
+print("HI T-44")
+
+
+Where we can use python:-
+-----------------------
+
+1.For Developing Desktop Application
+   > 1.1 - Writing Test case python(unittest) and test script(Pytest Framework)
+
+2.For Developing Web Application.
+ >2.1 - For Test Web Application with the help of python selenium.
+ > 2.2 - Writing web Test Scipts with help of pytest merge with selenium
+
+3.For Developing Database Application.
+4.For Network Programming
+5.For Developing Games
+6.For Data Analysis Application
+7.For Machine and Deep Learing
+8.For developing AI Applications
+9.For IOT (Internet od things)

@@ -1,0 +1,33 @@
+3 weeks session
+Focussing on python interview questions and indepth concepts, problems that
+will be asked in interviews
+
+1. Is python interpreted or compiled language?
+python is interpreter language
+
+2. What is difference between interpreter and compiler?
+
+complier : scans the entire program and converts to machine code as whole
+Interpreter: This read line by line of byte code and translates one statement at a time
+
+Compiler: It takes large amount of time to analyze the source code but the 
+overall execution time is faster
+
+Interpreter: It takes less amount of time to analyze the source code but the 
+overall execution time is slower
+
+compiler: Generates intermediate object code which further requires linking and also
+this needs more memory
+
+Interpreter : no intermediate code is generated
+
+Just In time compiler is available in the python when we download
+http://pypy.org/download.html -- original flavour of python
+
+CPython -- python implemented in c langauge
+Python program is converted into byte code using c functions
+
+Jython - Jython first compile python into java byte code. This byte code can be excuted
+by JVM(Java Virtual Machine)
+
+we will start seeing 

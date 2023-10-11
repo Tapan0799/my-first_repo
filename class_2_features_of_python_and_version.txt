@@ -1,0 +1,45 @@
+class-2
+-------
+
+Features Of Python:-
+------------------
+
+1. Simple and Easy to Learn:- 
+
+2. Freeware and Opensource:-
+
+3. High Level Programming Laguage:-
+
+4. Platform Independent:- PVM(Python Virtual Machine)
+
+5. Portability:-
+
+6. Dynamically Typed:-
+
+
+	variable = data(data type)-- statically
+	var = data --- automatically detect the type of data.
+
+	ex:- >>> a = 10
+	>>> type(a)
+	<class 'int'>
+
+
+	Name(v) = 'Chandra Sekhar'(data)
+	Age(v) = 25(data)
+
+
+7.Both Procedure Oriented and Object Oriented.
+
+8.Interpreted:-
+
+9.Extensive Library:-
+
+
+Python Version:-
+
+Python 1.0V introduced in Jan 1994
+Python 2.0V introduced in Oct 2000
+Python 3.0V introduced in Dec 2008
+
+Current Version:- 3.11.2

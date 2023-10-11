@@ -1,0 +1,32 @@
+Decorators in Python:
+
+what are decorators in python
+
+Decorator is a function that can take another function as an argument and extend its functionality
+and return the modified function with extended functionality
+
+
+
+def divisionofNumbers(number1, number2):
+      result = number1/number2
+      return result
+
+result = divisionofNumbers(4,2)
+print(result)
+
+result1 = divisionofNumbers(4,0)
+print(result)
+
+Decorators are used to add or modify the existing functionality without changing the original function
+
+This is an example of extensibility
+extensibility: without modifying the existing code, we can add new functionality
+
+we can also add multiple decorators also to single function
+this is called decorator chaining
+
+add new functionalities like addition, multiplication to the existing function we can use decorator chaining
+
+
+
+
